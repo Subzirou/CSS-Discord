@@ -1,0 +1,23 @@
+/* ==========================================================================
+   UI CLEANER & UTILITIES
+   ========================================================================== */
+
+/* Remove o botão de Presente (Nitro) */
+.buttons__74017 .container__5287f {
+    display: none !important;
+}
+
+/* Remove o botão de Apps */
+.app-launcher-entrypoint {
+    display: none !important;
+}
+
+/* Ajusta o espaçamento dos botões na barra de chat */
+.buttons__74017 .vc-chatbar-button {
+    width: 30px !important;
+}
+
+/* Esconde missões concluídas */
+.container__60f82 > div:not(:has(.expirationCopy_b5b7aa)) {
+    display: none !important;
+}
