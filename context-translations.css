@@ -1,0 +1,38 @@
+/* ==========================================================================
+   CONTEXT MENU TRANSLATIONS
+   ========================================================================== */
+
+/* --- HELPER BASE ---
+   Esconde o texto nativo em inglês e reseta o pseudo-elemento */
+div[id^="channel-context-vc-"] span[data-text-variant],
+#channel-context-voice-tools span[data-text-variant] {
+    font-size: 0 !important;
+}
+
+div[id^="channel-context-vc-"] span[data-text-variant]::after,
+#channel-context-voice-tools span[data-text-variant]::after {
+    font-size: 14px !important;
+    display: inline-block;
+}
+
+/* --- TRADUÇÕES --- */
+
+/* Limpar Histórico de Mensagens */
+#channel-context-vc-ml-clear-channel span[data-text-variant]::after {
+    content: "Limpar histórico de mensagens";
+}
+
+/* Abrir Chat na Barra Lateral */
+div[id*="channel-context-vc-sidebar-chat-"] span[data-text-variant]::after {
+    content: "Abrir chat na barra lateral";
+}
+
+/* Abrir Chat em Nova Janela */
+div[id*="channel-context-vc-sidebar-chat-popout-"] span[data-text-variant]::after {
+    content: "Abrir chat em nova janela";
+}
+
+/* Ferramentas de Voz */
+#channel-context-voice-tools span[data-text-variant]::after {
+    content: "Ferramentas de voz";
+}
