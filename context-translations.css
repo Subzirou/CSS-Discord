@@ -1,38 +1,41 @@
 /* ==========================================================================
-   CONTEXT MENU TRANSLATIONS
+   REMOÇÃO E REORDENAÇÃO DO MENU DE CONTEXTO
    ========================================================================== */
 
-/* --- HELPER BASE ---
-   Esconde o texto nativo em inglês e reseta o pseudo-elemento */
-div[id^="channel-context-vc-"] span[data-text-variant],
-#channel-context-voice-tools span[data-text-variant] {
-    font-size: 0 !important;
+/* 1. Ocultar a opção "Transferir para o PlayStation" */
+div[id*="channel-context-transfer-playstation"] {
+    display: none !important;
 }
 
-div[id^="channel-context-vc-"] span[data-text-variant]::after,
-#channel-context-voice-tools span[data-text-variant]::after {
-    font-size: 14px !important;
-    display: inline-block;
+/* 2. Habilitar Flexbox no container do menu para permitir reordenação */
+div[role="menu"] > div[role="group"] {
+    display: flex !important;
+    flex-direction: column !important;
 }
 
-/* --- TRADUÇÕES --- */
+/* 3. Definir a ordem exata dos itens */
 
-/* Limpar Histórico de Mensagens */
-#channel-context-vc-ml-clear-channel span[data-text-variant]::after {
-    content: "Limpar histórico de mensagens";
+/* 1º: Abrir chat na barra lateral */
+div[id*="channel-context-vc-sidebar-chat-"]:not([id*="popout"]) {
+    order: 1 !important;
 }
 
-/* Abrir Chat na Barra Lateral */
-div[id*="channel-context-vc-sidebar-chat-"] span[data-text-variant]::after {
-    content: "Abrir chat na barra lateral";
+/* 2º: Abrir chat em nova janela */
+div[id*="channel-context-vc-sidebar-chat-popout-"] {
+    order: 2 !important;
 }
 
-/* Abrir Chat em Nova Janela */
-div[id*="channel-context-vc-sidebar-chat-popout-"] span[data-text-variant]::after {
-    content: "Abrir chat em nova janela";
+/* 3º: Ferramentas de voz */
+#channel-context-voice-tools {
+    order: 3 !important;
 }
 
-/* Ferramentas de Voz */
-#channel-context-voice-tools span[data-text-variant]::after {
-    content: "Ferramentas de voz";
+/* 4º: Copiar ID do canal */
+div[id*="channel-context-devmode-copy-id"] {
+    order: 4 !important;
+}
+
+/* 5º: Limpar histórico de mensagens (e quaisquer outros itens restantes) */
+#channel-context-vc-ml-clear-channel {
+    order: 5 !important;
 }
