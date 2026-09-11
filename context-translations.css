@@ -29,7 +29,7 @@ div[id*="channel-context-vc-sidebar-chat-"]:not([id*="popout"]) span[data-text-v
 
 /* 3. Abrir Chat em Nova Janela */
 div[id*="channel-context-vc-sidebar-chat-popout-"] span[data-text-variant]::after {
-    content: "Abrir chat em nova JANELA";
+    content: "Abrir chat em nova janela";
 }
 
 /* 4. Ferramentas de Voz */
