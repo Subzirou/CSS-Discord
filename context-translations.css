@@ -1,5 +1,5 @@
 /* ==========================================================================
-   CONTEXT MENU TRANSLATIONS & REORDERING
+   CONTEXT MENU TRANSLATIONS & CLEANUP
    ========================================================================== */
 
 /* --- HELPER BASE ---
@@ -29,7 +29,7 @@ div[id*="channel-context-vc-sidebar-chat-"]:not([id*="popout"]) span[data-text-v
 
 /* 3. Abrir Chat em Nova Janela */
 div[id*="channel-context-vc-sidebar-chat-popout-"] span[data-text-variant]::after {
-    content: "Abrir chat em nova janelinha";
+    content: "Abrir chat em nova janela";
 }
 
 /* 4. Ferramentas de Voz */
@@ -37,47 +37,9 @@ div[id*="channel-context-vc-sidebar-chat-popout-"] span[data-text-variant]::afte
     content: "Ferramentas de voz";
 }
 
+/* --- REMOÇÃO DE ELEMENTOS --- */
 
-/* ==========================================================================
-   REMOÇÃO E REORDENAÇÃO DO MENU DE CONTEXTO
-   ========================================================================== */
-
-/* 1. Ocultar a opção "Transferir para o PlayStation" */
+/* Ocultar a opção "Transferir para o PlayStation" */
 div[id*="channel-context-transfer-playstation"] {
     display: none !important;
-}
-
-/* 2. Habilitar Flexbox nos wrappers para permitir a reordenação */
-div[role="menu"],
-div[role="menu"] > div[role="group"],
-div[class*="menu_"] {
-    display: flex !important;
-    flex-direction: column !important;
-}
-
-/* 3. Definir a ordem exata dos itens */
-
-/* 1º: Abrir chat na barra lateral */
-div[id*="channel-context-vc-sidebar-chat-"]:not([id*="popout"]) {
-    order: 1 !important;
-}
-
-/* 2º: Abrir chat em nova janela */
-div[id*="channel-context-vc-sidebar-chat-popout-"] {
-    order: 2 !important;
-}
-
-/* 3º: Ferramentas de voz */
-#channel-context-voice-tools {
-    order: 3 !important;
-}
-
-/* 4º: Copiar ID do canal */
-div[id*="channel-context-devmode-copy-id"] {
-    order: 4 !important;
-}
-
-/* 5º: Limpar histórico de mensagens (e demais opções restantes) */
-#channel-context-vc-ml-clear-channel {
-    order: 5 !important;
 }
