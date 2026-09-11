@@ -1,0 +1,19 @@
+/* ==========================================================================
+   VOICE BAR CONTROLS
+   ========================================================================== */
+
+/* Oculta as setas laterais (chevrons) dos botões divididos */
+div[class*="audioButtonParent"] button[class*="buttonChevron"] {
+    display: none !important;
+}
+
+/* Define arredondamento suave de 8px nos botões */
+div[class*="audioButtonParent"],
+div[class*="audioButtonParent"] button[class*="plated"] {
+    border-radius: 8px !important;
+}
+
+/* Reduz o espaçamento entre os ícones da barra de voz */
+div[class*="buttons"] {
+    gap: 4px !important;
+}
